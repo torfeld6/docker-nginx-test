@@ -26,7 +26,7 @@
 on:
   push:
     branches: 
-      -master
+      - master
 
 name: Deploy to Amazon ECS
 
@@ -54,7 +54,7 @@ jobs:
       id: build-image
       env:
         ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-        ECR_REPOSITORY: 156097259815.dkr.ecr.eu-west-1.amazonaws.com/t6-nginx-test
+        ECR_REPOSITORY: t6-nginx-test
         IMAGE_TAG: ${{ github.sha }}
       run: |
         # Build a docker container and
